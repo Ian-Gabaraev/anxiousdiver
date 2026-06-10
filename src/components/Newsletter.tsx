@@ -52,11 +52,23 @@ export function Newsletter() {
             <label htmlFor="email" className="sr-only">Email</label>
             <input
               id="email"
+              name="email"
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@yourdomain.com"
+              autoComplete="email"
+              // Password managers (1Password, LastPass, Dashlane, Bitwarden) inject
+              // inline styles + icons into email inputs, which causes a React
+              // hydration mismatch on first render. These attributes ask them to
+              // skip this field; suppressHydrationWarning handles any extension
+              // we haven't covered.
+              data-1p-ignore
+              data-lpignore="true"
+              data-bwignore
+              data-form-type="other"
+              suppressHydrationWarning
               className="flex-1 rounded-full bg-transparent border border-[var(--line)] px-5 py-3 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] outline-none"
             />
             <button
