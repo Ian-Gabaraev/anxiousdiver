@@ -65,16 +65,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data={{
             '@context': 'https://schema.org',
             '@type': 'WebSite',
+            '@id': `${site.url}/#website`,
             name: site.name,
             url: site.url,
             description: site.description,
             inLanguage: 'en',
-            author: {
-              '@type': 'Person',
-              name: site.author.name,
-              url: site.author.url,
-              sameAs: [site.author.instagram, site.author.pexels, site.author.website].filter(Boolean),
-            },
+            publisher: { '@id': `${site.url}/#person` },
+            author: { '@id': `${site.url}/#person` },
+          }}
+        />
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            '@id': `${site.url}/#person`,
+            name: site.author.name,
+            url: site.author.url,
+            jobTitle: 'Technical Diver',
+            description:
+              'Technical diver writing about anxiety, fear, and the mental side of scuba diving at anxiousdiver.com.',
+            sameAs: [
+              site.author.website,
+              site.author.instagram,
+              site.author.pexels,
+              site.url,
+            ].filter(Boolean),
           }}
         />
       </body>

@@ -21,11 +21,41 @@ export function Header() {
           <Link href="/about/" className="ink-link opacity-80 hover:opacity-100">About</Link>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <a
+            href={site.author.website}
+            rel="me noopener"
+            target="_blank"
+            aria-label="Ian Gabaraev — personal site"
+            title="iangabaraev.com"
+            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[color:var(--fg)] hover:text-[color:var(--accent)] hover:border-[color:var(--accent)] transition-colors"
+          >
+            <IconGlobe />
+          </a>
+          <a
+            href={site.author.instagram}
+            rel="me noopener"
+            target="_blank"
+            aria-label="Instagram — @iangabaraev"
+            title="Instagram"
+            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[color:var(--fg)] hover:text-[color:var(--accent)] hover:border-[color:var(--accent)] transition-colors"
+          >
+            <IconInstagram />
+          </a>
+          <a
+            href={site.author.pexels}
+            rel="me noopener"
+            target="_blank"
+            aria-label="Pexels — photography by Ian Gabaraev"
+            title="Pexels"
+            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[color:var(--fg)] hover:text-[color:var(--accent)] hover:border-[color:var(--accent)] transition-colors"
+          >
+            <IconCamera />
+          </a>
           <a
             href="/rss.xml"
             aria-label="RSS feed"
-            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[color:var(--fg)] hover:text-[color:var(--accent)] transition-colors"
+            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[color:var(--fg)] hover:text-[color:var(--accent)] hover:border-[color:var(--accent)] transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
               <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" />
@@ -36,6 +66,34 @@ export function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function IconGlobe() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.8 3.2 2.8 14 0 18M12 3c-2.8 3.2-2.8 14 0 18" />
+    </svg>
+  );
+}
+
+function IconInstagram() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconCamera() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <path d="M4 8h3l2-2.5h6L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
+      <circle cx="12" cy="13" r="3.6" />
+    </svg>
   );
 }
 

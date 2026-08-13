@@ -11,7 +11,7 @@ export const site = {
     url: 'https://iangabaraev.com',
     twitter: '',
     instagram: 'https://instagram.com/iangabaraev',
-    pexels: 'https://www.pexels.com/@an-gabaraev-2149212079',
+    pexels: 'https://www.pexels.com/@ian-gabaraev-2149212079',
     website: 'https://iangabaraev.com',
   },
   locale: 'en_US',

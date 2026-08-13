@@ -42,22 +42,54 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="mt-12 flex flex-wrap gap-3 text-sm">
-        <a href={site.author.instagram} target="_blank" rel="noopener me" className="chip">Instagram ↗</a>
-        <a href={site.author.pexels}    target="_blank" rel="noopener me" className="chip">Pexels ↗</a>
-        <a href={site.author.website}   target="_blank" rel="noopener me" className="chip">iangabaraev.com ↗</a>
-        <Link href="/posts/" className="chip" data-topic="tech">Read the writing →</Link>
+      <div className="mt-12">
+        <p className="font-mono text-[0.72rem] tracking-[0.3em] uppercase text-[color:var(--muted)]">// elsewhere</p>
+        <div className="mt-3 flex flex-wrap gap-3 text-sm">
+          <a href={site.author.website} target="_blank" rel="noopener me" className="chip inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.8 3.2 2.8 14 0 18M12 3c-2.8 3.2-2.8 14 0 18" />
+            </svg>
+            iangabaraev.com ↗
+          </a>
+          <a href={site.author.instagram} target="_blank" rel="noopener me" className="chip inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
+            </svg>
+            Instagram — @iangabaraev ↗
+          </a>
+          <a href={site.author.pexels} target="_blank" rel="noopener me" className="chip inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+              <path d="M4 8h3l2-2.5h6L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
+              <circle cx="12" cy="13" r="3.6" />
+            </svg>
+            Pexels — photography ↗
+          </a>
+          <Link href="/posts/" className="chip inline-flex items-center gap-2" data-topic="tech">
+            Read the writing →
+          </Link>
+        </div>
       </div>
 
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'Person',
+          '@id': `${site.url}/#person`,
           name: site.author.name,
           url: site.author.url,
+          mainEntityOfPage: `${site.url}/about/`,
           jobTitle: 'Technical Diver',
-          sameAs: [site.author.instagram, site.author.pexels, site.author.website].filter(Boolean),
-          description: 'Technical diver writing about anxiety, fear, and the mental side of scuba diving.',
+          sameAs: [
+            site.author.website,
+            site.author.instagram,
+            site.author.pexels,
+            site.url,
+          ].filter(Boolean),
+          description:
+            'Technical diver writing about anxiety, fear, and the mental side of scuba diving.',
         }}
       />
     </section>

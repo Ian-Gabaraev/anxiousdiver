@@ -29,8 +29,8 @@ export function Footer() {
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Elsewhere</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href={site.author.instagram} className="ink-link" rel="me noopener" target="_blank">Instagram</a></li>
-            <li><a href={site.author.pexels} className="ink-link" rel="me noopener" target="_blank">Pexels (photos)</a></li>
+            <li><a href={site.author.instagram} className="ink-link" rel="me noopener" target="_blank">Instagram — @iangabaraev</a></li>
+            <li><a href={site.author.pexels} className="ink-link" rel="me noopener" target="_blank">Pexels — photography</a></li>
             <li><a href={site.author.website} className="ink-link" rel="me noopener" target="_blank">iangabaraev.com</a></li>
           </ul>
         </div>
