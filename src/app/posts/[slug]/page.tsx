@@ -10,8 +10,14 @@ import { JsonLd } from '@/components/JsonLd';
 
 interface Params { slug: string }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }));
+  const posts = getAllPosts();
+  // Next 15 with `output: 'export'` requires at least one param.
+  // Return a placeholder that resolves to notFound() when there are no posts.
+  if (posts.length === 0) return [{ slug: '__placeholder' }];
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
