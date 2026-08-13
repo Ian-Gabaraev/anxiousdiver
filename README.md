@@ -36,6 +36,10 @@ Write the post body in MDX (Markdown + JSX). GFM is enabled.
 
 That's it. Next build → it gets its own static HTML page, sitemap entry, RSS item, and JSON-LD.
 
+**For the full authoring guide** — frontmatter reference, image rules, SEO
+checklist, and Google Search Console workflow — see [`AUTHORING.md`](./AUTHORING.md).
+Read it before publishing.
+
 ## Design
 
 - **Abyssal** dark theme (default) + **Sunlit Shallows** light theme, toggleable.
