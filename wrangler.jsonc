@@ -3,6 +3,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "anxiousdiver",
   "compatibility_date": "2025-06-01",
+  "build": {
+    "command": "npm install && npm run build"
+  },
   "assets": {
     "directory": "./out",
     "not_found_handling": "404-page",
