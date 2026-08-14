@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { site } from '@/lib/site';
-import { TOPICS, type Topic } from '@/lib/posts';
+import { TOPICS, type Topic, getAllPosts } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'Upcoming articles',
@@ -89,6 +89,17 @@ const UPCOMING: UpcomingPost[] = [
 ];
 
 export default function UpcomingPage() {
+  // Auto-hide any upcoming entry whose title matches a published post.
+  // Match is case/whitespace/punctuation-insensitive, so minor edits between
+  // "draft title" and "published title" still trip the removal.
+  const norm = (s: string) =>
+    s
+      .toLowerCase()
+      .replace(/[^\p{Letter}\p{Number}]+/gu, ' ')
+      .trim();
+  const publishedTitles = new Set(getAllPosts().map((p) => norm(p.title)));
+  const pending = UPCOMING.filter((u) => !publishedTitles.has(norm(u.title)));
+
   return (
     <section className="mx-auto max-w-4xl px-5 sm:px-8 py-20 md:py-28">
       <header className="mb-14">
@@ -99,48 +110,56 @@ export default function UpcomingPage() {
           Upcoming articles.
         </h1>
         <p className="mt-6 text-lg text-[color:var(--muted)] max-w-2xl">
-          The next ten pieces on the bench — in rough priority order. Titles will shift as
-          drafts land. If you want to catch them as they publish,{' '}
+          The next {pending.length} pieces on the bench — in rough priority order. Titles will
+          shift as drafts land. Entries disappear from this list automatically the moment
+          the article ships. If you want to catch them as they publish,{' '}
           <a href="/rss.xml" className="ink-link text-[color:var(--accent)]">subscribe via RSS</a>.
         </p>
       </header>
 
-      <ol className="space-y-6">
-        {UPCOMING.map((post, i) => {
-          const t = TOPICS[post.topic];
-          return (
-            <li
-              key={post.title}
-              className="group relative rounded-2xl border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_60%,transparent)] p-6 sm:p-7 transition-colors hover:border-[color:var(--accent)]/60"
-            >
-              <div className="flex items-start gap-5">
-                <span
-                  aria-hidden
-                  className="shrink-0 font-mono text-[0.78rem] tracking-[0.18em] text-[color:var(--muted)] pt-1 tabular-nums"
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-3 text-xs">
-                    <span className="chip" data-topic={post.topic}>
-                      {t.label}
-                    </span>
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[color:var(--muted)]">
-                      draft
-                    </span>
+      {pending.length === 0 ? (
+        <p className="text-[color:var(--muted)] text-lg">
+          Nothing on the bench right now — everything queued up has shipped.
+          Check <Link href="/posts/" className="ink-link text-[color:var(--accent)]">all writing</Link>.
+        </p>
+      ) : (
+        <ol className="space-y-6">
+          {pending.map((post, i) => {
+            const t = TOPICS[post.topic];
+            return (
+              <li
+                key={post.title}
+                className="group relative rounded-2xl border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_60%,transparent)] p-6 sm:p-7 transition-colors hover:border-[color:var(--accent)]/60"
+              >
+                <div className="flex items-start gap-5">
+                  <span
+                    aria-hidden
+                    className="shrink-0 font-mono text-[0.78rem] tracking-[0.18em] text-[color:var(--muted)] pt-1 tabular-nums"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-3 text-xs">
+                      <span className="chip" data-topic={post.topic}>
+                        {t.label}
+                      </span>
+                      <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                        draft
+                      </span>
+                    </div>
+                    <h2 className="mt-3 font-display text-xl md:text-2xl font-semibold tracking-tight leading-tight">
+                      {post.title}
+                    </h2>
+                    <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
+                      {post.pitch}
+                    </p>
                   </div>
-                  <h2 className="mt-3 font-display text-xl md:text-2xl font-semibold tracking-tight leading-tight">
-                    {post.title}
-                  </h2>
-                  <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
-                    {post.pitch}
-                  </p>
                 </div>
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+              </li>
+            );
+          })}
+        </ol>
+      )}
 
       <div className="mt-16 flex flex-wrap items-center gap-3 text-sm">
         <Link href="/posts/" className="chip" data-topic="tech">
