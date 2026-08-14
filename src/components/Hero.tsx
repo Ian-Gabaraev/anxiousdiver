@@ -32,9 +32,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-7 max-w-2xl text-lg md:text-xl text-[color:var(--muted)] animate-rise">
-          A blog by <strong className="text-[color:var(--fg)] font-medium">Ian Gabaraev</strong>, a technical
-          diver who still gets scared. Honest writing about anxiety, breath, decompression,
-          and the small skills that turn panic back into curiosity.
+          A blog by <strong className="text-[color:var(--fg)] font-medium">Ian Gabaraev</strong> —
+          technical diver, 500 dives in. Field notes on what fear does at depth, how it
+          stops running the show, and the small skills that quiet it.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3 animate-rise">

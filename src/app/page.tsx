@@ -26,12 +26,12 @@ export default function HomePage() {
           </div>
           <div className="md:col-span-8 text-lg leading-relaxed text-[color:var(--fg)]/90">
             <p>
-              I'm a <strong>technical diver</strong> who, on the surface,
-              looks like someone who has it figured out — twin sets, deco bottles, the
-              full kit. Underwater, I'm often the most anxious person on the boat.
+              I'm a <strong>technical diver</strong> — twin sets, deco bottles, the
+              full kit. 500 dives in, I do not panic much anymore. I used to. The gap
+              between those two versions of me is what this blog is about.
             </p>
             <p className="mt-4 text-[color:var(--muted)]">
-              This blog is the writing I wish I'd had when I was certifying. It's about
+              This is the writing I wish I had had when I was certifying. It is about
               the parts no instructor really teaches you: panic at depth, breath rate,
               narcosis, post-dive shakes, and the slow, unglamorous work of becoming a
               calmer diver.
