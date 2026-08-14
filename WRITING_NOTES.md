@@ -57,6 +57,37 @@ slightly formal weight against the casual content. It's a choice, and it works.
 "Even if you did — you are still deep enough for water to be over your head."
 Use em dashes (—), not hyphens (-), not double hyphens (--).
 
+### 8. Aquatic diction — the verbs match the element
+Ian chooses verbs and metaphors that belong to water. This is not decorative;
+it is the thing that makes his prose feel like it was written *from* the ocean,
+not just *about* it. Never swap these for generic synonyms.
+
+Signature example — **"the fear will dissolve"**:
+- `dissolve` is a water verb (sugar dissolves in water)
+- `evaporate` would go up; the diver goes down — wrong vector
+- `vanish` is magic, instantaneous, unearned
+- `go away` is flat, thoughts-not-water
+- Bonus resonance: dissolving is what nitrogen does in a diver's blood.
+  A diver half-consciously registers this. Do not remove it.
+
+The rule: **when he uses a verb that belongs to water, pressure, depth, gas,
+tides, currents, silt, or descent — keep it.** Even if a "simpler" word exists.
+The simpler word almost certainly does not belong to the ocean, and swapping
+it flattens the whole passage.
+
+Other verbs to protect (non-exhaustive — watch for the *pattern*):
+
+- **sink, settle, descend, drift, hang, suspend** — for bodies and moods
+- **surface, breach** — for realizations and returns
+- **flood, seep, leak, pool** — for feelings and light
+- **clear, silt out, silt up** — for thinking (clear the mask → clear the head)
+- **hold, vent, breathe, exhale** — for time, tension, pauses
+- **narced, offgas, ongas** — technical terms he'd use naturally; do not
+  translate them into "confused" / "recover" / "load up"
+
+If an edit replaces one of these with a landlubber word, **flag it**. The
+whole voice quietly leaks out through choices like this.
+
 ---
 
 ## Where to push him (edit gently)
@@ -126,6 +157,7 @@ before publishing**. Do not silently "fix" — flag first, let Ian decide.
 - [ ] No contractions in editorial prose (dialogue exception is fine)
 - [ ] Em dashes are actual em dashes (—), not hyphens
 - [ ] Specific proper nouns and numbers preserved (no "a nice hotel", no "some drinks")
+- [ ] **Aquatic diction preserved** — no water-verb swapped for a generic one (e.g. `dissolve` → `vanish`, `sink` → `sink into`, `surface` → `arise`, `narced` → `confused`). If in doubt, keep his word.
 
 ### Openings
 - [ ] First sentence puts the reader in a scene or on a concrete object — not a rhetorical question, not a mission statement
