@@ -18,6 +18,7 @@ export function Footer() {
           <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Read</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link href="/posts/" className="ink-link">All writing</Link></li>
+            <li><Link href="/upcoming/" className="ink-link">Upcoming</Link></li>
             <li><Link href="/topics/anxiety/" className="ink-link">Anxiety</Link></li>
             <li><Link href="/topics/tech/" className="ink-link">Tech diving</Link></li>
             <li><Link href="/topics/gear/" className="ink-link">Gear</Link></li>

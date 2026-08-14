@@ -18,6 +18,7 @@ export function Header() {
           <Link href="/topics/anxiety/" className="ink-link opacity-80 hover:opacity-100">Anxiety</Link>
           <Link href="/topics/tech/" className="ink-link opacity-80 hover:opacity-100">Tech</Link>
           <Link href="/topics/gear/" className="ink-link opacity-80 hover:opacity-100">Gear</Link>
+          <Link href="/upcoming/" className="ink-link opacity-80 hover:opacity-100">Upcoming</Link>
           <Link href="/about/" className="ink-link opacity-80 hover:opacity-100">About</Link>
         </nav>
 
