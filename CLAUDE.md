@@ -65,6 +65,10 @@ This blog lives or dies by search. Every change must preserve:
 
 ## Authoring a new post
 
+**Before publishing any draft**: run it through the checklist in
+[`WRITING_NOTES.md`](./WRITING_NOTES.md) and report pass/fail to Ian.
+Do NOT silently "fix" voice. Flag first, let him decide.
+
 1. Create `/content/posts/<slug>.mdx` with frontmatter:
    ```yaml
    ---

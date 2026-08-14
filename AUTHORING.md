@@ -6,6 +6,11 @@ make sure Google (and the RSS crowd) actually finds it.
 Read this end-to-end the first time. After that, use the **checklist at the
 bottom** before every push.
 
+> **Editing the prose itself?** See [`WRITING_NOTES.md`](./WRITING_NOTES.md)
+> for voice rules, common wobbles, and a pre-publish checklist to run against
+> every draft. AI assistants must run that checklist and report before any
+> publish.
+
 ---
 
 ## 1. Create the MDX file
