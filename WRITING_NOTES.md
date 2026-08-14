@@ -88,6 +88,47 @@ Other verbs to protect (non-exhaustive — watch for the *pattern*):
 If an edit replaces one of these with a landlubber word, **flag it**. The
 whole voice quietly leaks out through choices like this.
 
+### 9. Kill the antithesis tic — a.k.a. "AI slop"
+Ian's biggest allergy is the rhetorical device where a sentence is followed
+by a mirror sentence that "corrects" it:
+
+- "That is not a downgrade. That is a promotion."
+- "Calm is not the goal. The goal is X."
+- "That is not a failure. That is Y."
+- "This is not X. This is Y."
+- "It is not X. It is Y."
+
+This pattern reads like insight but is scaffolding. LLMs default to it because
+it *feels* punchy. It is not — it is a tic. In Ian's real voice, the same
+observation lands more concretely and more humbly.
+
+**How to fix it**:
+
+1. Delete the "not X" half. Nine times out of ten the "Y" half already lands.
+   - ~~"That is not a downgrade. That is a promotion."~~ → cut both. The
+     previous sentence already carries the point.
+2. Or replace the frame with a concrete action or image.
+   - ~~"This is calm as a decision made in water she cannot control."~~
+     → "Kasparova made a decision in water she could not control, and the
+     decision held."
+3. Or collapse the pair into one sentence that just makes the claim.
+   - ~~"Calm is not the goal. The goal is that fear does not get to make the
+     next decision."~~ → "What you actually need is for fear to arrive
+     without getting to make the next decision."
+
+**When it *is* OK to keep the pattern**:
+- Both halves have concrete content (not abstractions).
+- The reader would genuinely misread the first sentence without the pivot.
+- The whole pair is short — under ~20 words.
+
+Example that stays: *"The bottom being far away is fine. The bottom being
+invisible is where the primal thing lands."* — both halves are physical, and
+the pivot is doing real work.
+
+**Rule of thumb for the checklist**: when you find a "not X / but Y" pair,
+try deleting the "not X" half. If the paragraph still lands, it should have
+been deleted from the start.
+
 ---
 
 ## Where to push him (edit gently)
@@ -158,6 +199,7 @@ before publishing**. Do not silently "fix" — flag first, let Ian decide.
 - [ ] Em dashes are actual em dashes (—), not hyphens
 - [ ] Specific proper nouns and numbers preserved (no "a nice hotel", no "some drinks")
 - [ ] **Aquatic diction preserved** — no water-verb swapped for a generic one (e.g. `dissolve` → `vanish`, `sink` → `sink into`, `surface` → `arise`, `narced` → `confused`). If in doubt, keep his word.
+- [ ] **No antithesis tic** — scan for `"That is not X. That is Y."`, `"It is not X. It is Y."`, `"X is not the goal. The goal is Y."` and similar mirror-sentence pairs. If found, try deleting the "not X" half. If the paragraph still lands, delete it. See §9.
 
 ### Openings
 - [ ] First sentence puts the reader in a scene or on a concrete object — not a rhetorical question, not a mission statement
