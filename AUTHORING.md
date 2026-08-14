@@ -57,6 +57,8 @@ date: "2026-08-14"                        # ISO YYYY-MM-DD, drives sort + sitema
 topic: "stories"                          # anxiety | tech | gear | stories
 excerpt: "1–2 sentences. Also used as meta description."   # 140–160 chars ideal
 cover: "/posts/letting-go-of-the-wall.jpg" # 1200×630, used for OG + Twitter card
+coverAlt: "Custom alt for the hero image. Falls back to title if omitted."   # optional
+coverCredit: "Photo by Jane Doe on Unsplash"                                 # optional, rendered as figcaption
 tags: ["panic", "dubai", "confined-water"] # optional, freeform
 featured: true                             # optional, boosts home-grid ranking
 pinned: true                               # optional, ONE at a time — "Start Here"

@@ -18,6 +18,8 @@ export interface PostFrontmatter {
   excerpt: string;
   topic: Topic;
   cover?: string;
+  coverAlt?: string;     // custom alt for the hero cover (defaults to title)
+  coverCredit?: string;  // photographer credit rendered as a figcaption
   featured?: boolean;
   pinned?: boolean;
   tags?: string[];

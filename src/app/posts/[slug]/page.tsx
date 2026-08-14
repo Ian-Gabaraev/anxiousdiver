@@ -78,10 +78,15 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={post.cover}
-            alt={post.title}
+            alt={post.coverAlt ?? post.title}
             loading="eager"
             className="w-full h-auto object-cover aspect-[1200/630]"
           />
+          {post.coverCredit && (
+            <figcaption className="px-5 sm:px-6 py-3 text-xs font-mono tracking-wide text-[color:var(--muted)] border-t border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)]">
+              {post.coverCredit}
+            </figcaption>
+          )}
         </figure>
       )}
 
