@@ -73,6 +73,18 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
         <p className="mt-5 text-lg text-[color:var(--muted)]">{post.excerpt}</p>
       </header>
 
+      {post.cover && (
+        <figure className="not-prose -mx-5 sm:mx-0 mb-12 md:mb-16 overflow-hidden sm:rounded-xl border-y sm:border border-[var(--line)] shadow-[0_20px_60px_-30px_rgba(0,0,0,0.5)]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.cover}
+            alt={post.title}
+            loading="eager"
+            className="w-full h-auto object-cover aspect-[1200/630]"
+          />
+        </figure>
+      )}
+
       <div className="prose prose-lg dark:prose-invert">
         <MDXRemote
           source={post.content}
