@@ -7,6 +7,7 @@ import rehypeSlug from 'rehype-slug';
 import { getAllPosts, getPost, TOPICS } from '@/lib/posts';
 import { site } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
+import { PostImage, extractCredit } from '@/components/PostImage';
 
 interface Params { slug: string }
 
@@ -88,21 +89,20 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={post.cover}
-            alt={post.coverAlt ?? post.title}
+            alt={extractCredit(post.coverAlt).alt || post.title}
             loading="eager"
             className="w-full h-auto object-cover aspect-[1200/630]"
           />
-          {post.coverCredit && (
-            <figcaption className="px-5 sm:px-6 py-3 text-xs font-mono tracking-wide text-[color:var(--muted)] border-t border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)]">
-              {post.coverCredit}
-            </figcaption>
-          )}
+          <figcaption className="px-5 sm:px-6 py-3 text-xs font-mono tracking-wide text-[color:var(--muted)] border-t border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)]">
+            {post.coverCredit ?? extractCredit(post.coverAlt).credit}
+          </figcaption>
         </figure>
       )}
 
       <div className="prose prose-lg dark:prose-invert">
         <MDXRemote
           source={post.content}
+          components={{ img: PostImage }}
           options={{
             mdxOptions: {
               remarkPlugins: [remarkGfm],
