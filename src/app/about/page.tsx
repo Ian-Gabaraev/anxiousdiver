@@ -46,8 +46,8 @@ export default function AboutPage() {
           serving interpreters across 65 languages.
         </p>
         <p>
-          Outside the day job I build things for myself. NomadAtlas — a React 19
-          finance dashboard for digital nomads. Bat Sonar — an ultrasonic
+          Outside the day job I build things for myself. <a href="https://nomadatlas.dev" target="_blank" rel="noopener">NomadAtlas</a> — a
+          React 19 finance dashboard for digital nomads. Bat Sonar — an ultrasonic
           bat-detection rig that combines DSP with machine learning. Same instinct as
           the diving, honestly: go somewhere the room is quiet and see what the
           signal actually looks like.
@@ -105,6 +105,7 @@ export default function AboutPage() {
             site.author.website,
             site.author.instagram,
             site.author.pexels,
+            'https://nomadatlas.dev',
             site.url,
           ].filter(Boolean),
           description:

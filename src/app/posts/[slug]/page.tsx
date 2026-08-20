@@ -60,12 +60,22 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
   return (
     <article className="mx-auto max-w-3xl px-5 sm:px-8 py-16 md:py-24">
       <header className="mb-10 not-prose">
-        <div className="flex items-center gap-3 text-sm">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
           <Link href={`/topics/${post.topic}/`} className="chip" data-topic={post.topic}>
             {TOPICS[post.topic].label}
           </Link>
           <time dateTime={post.date} className="text-[color:var(--muted)] font-mono text-xs">{date}</time>
           <span className="text-[color:var(--muted)] text-xs">· {post.readingMinutes} min read</span>
+          <span className="text-[color:var(--muted)] text-xs">
+            · By{' '}
+            <Link
+              href="/about/"
+              rel="author"
+              className="text-[color:var(--muted)] hover:text-[color:var(--accent)] underline decoration-dotted underline-offset-4"
+            >
+              {site.author.name}
+            </Link>
+          </span>
         </div>
         <h1 className="mt-5 font-display text-4xl md:text-5xl font-semibold tracking-[-0.02em] leading-[1.05]">
           {post.title}
@@ -124,8 +134,8 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
           inLanguage: 'en',
           mainEntityOfPage: `${site.url}/posts/${post.slug}/`,
           url: `${site.url}/posts/${post.slug}/`,
-          author: { '@type': 'Person', name: site.author.name, url: site.author.url },
-          publisher: { '@type': 'Person', name: site.author.name, url: site.author.url },
+          author: { '@id': `${site.url}/#person`, '@type': 'Person', name: site.author.name, url: site.author.url },
+          publisher: { '@id': `${site.url}/#person`, '@type': 'Person', name: site.author.name, url: site.author.url },
           articleSection: TOPICS[post.topic].label,
           keywords: [TOPICS[post.topic].label, ...(post.tags ?? [])].join(', '),
           image: post.cover ? [`${site.url}${post.cover}`] : undefined,

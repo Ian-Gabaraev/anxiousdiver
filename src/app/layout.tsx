@@ -81,13 +81,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             '@id': `${site.url}/#person`,
             name: site.author.name,
             url: site.author.url,
-            jobTitle: 'Technical Diver',
+            jobTitle: 'Lead Full-Stack Engineer',
             description:
-              'Technical diver writing about anxiety, fear, and the mental side of scuba diving at anxiousdiver.com.',
+              'Lead full-stack engineer and technical diver. Writes about anxiety, fear, and the mental side of scuba diving at anxiousdiver.com.',
             sameAs: [
               site.author.website,
               site.author.instagram,
               site.author.pexels,
+              'https://nomadatlas.dev',
               site.url,
             ].filter(Boolean),
           }}
