@@ -38,7 +38,22 @@ export default function AboutPage() {
           that change how you think.
         </p>
         <p>
-          If any of that sounds familiar — welcome. You're not the only one.
+          Day job: I am a lead full-stack engineer. React on the front, Python on the
+          back, AWS and Azure underneath. For the past decade I have shipped
+          production systems across healthcare, biotech, and education — cloud
+          migrations, APIs, real-time UIs, distributed systems that have to hold up at
+          scale. At Akvelon I lead development of an enterprise telehealth platform
+          serving interpreters across 65 languages.
+        </p>
+        <p>
+          Outside the day job I build things for myself. NomadAtlas — a React 19
+          finance dashboard for digital nomads. Bat Sonar — an ultrasonic
+          bat-detection rig that combines DSP with machine learning. Same instinct as
+          the diving, honestly: go somewhere the room is quiet and see what the
+          signal actually looks like.
+        </p>
+        <p>
+          If any of that sounds familiar — welcome. You are not the only one.
         </p>
       </div>
 
@@ -81,7 +96,11 @@ export default function AboutPage() {
           name: site.author.name,
           url: site.author.url,
           mainEntityOfPage: `${site.url}/about/`,
-          jobTitle: 'Technical Diver',
+          jobTitle: 'Lead Full-Stack Engineer',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Akvelon',
+          },
           sameAs: [
             site.author.website,
             site.author.instagram,
@@ -89,7 +108,7 @@ export default function AboutPage() {
             site.url,
           ].filter(Boolean),
           description:
-            'Technical diver writing about anxiety, fear, and the mental side of scuba diving.',
+            'Lead full-stack engineer and technical diver. Writes about anxiety, fear, and the mental side of scuba diving.',
         }}
       />
     </section>
